@@ -323,6 +323,153 @@ Android Studio автоматически добавит некоторые пр
 
 ![image](https://github.com/gipnozhard/TipTime/assets/71705375/60918e10-367c-4465-a79e-88bd78313757)
 
+## 5. Добавление параметров подсказок
+
+Далее вы добавите переключатели для различных вариантов подсказок, которые пользователь может выбрать.
+
+Должно быть три варианта:
+
+ * Потрясающе (20%)
+ 
+ * Хорошо (18%)
+
+ * Хорошо (15%)
+
+Если вы не уверены, как это сделать, вы можете выполнить поиск в Google. Это отличный инструмент, который разработчики используют, когда они застревают.
+
+ 1. Выполните поиск в Google по radio button android. Лучший результат - руководство с сайта разработчиков Android о том, как использовать переключатели — идеально!
+
+![image](https://github.com/gipnozhard/TipTime/assets/71705375/8f6c3bea-6477-4396-81ed-27ce6c302c21)
+
+ 2. Просмотрите руководство по переключателям.
+
+Прочитав описание, вы можете убедиться, что можете использовать RadioButton элемент пользовательского интерфейса в своем макете для каждого нужного вам переключателя. Кроме того, вам также необходимо сгруппировать переключатели внутри RadioGroup, поскольку одновременно можно выбрать только один вариант.
+
+Существует некоторый XML, который выглядит так, как будто он соответствует вашим потребностям. Прочтите его и посмотрите, RadioGroup является ли родительский вид и RadioButtons являются ли дочерние виды в нем.
+
+ 3. Вернитесь к своему макету в Android Studio, чтобы добавить RadioGroup и RadioButton в свое приложение.
+
+ 4. После TextView элемента, но все еще внутри ConstraintLayout, начните вводить <RadioGroup. Android Studio предоставит полезные рекомендации, которые помогут вам заполнить XML.
+
+![image](https://github.com/gipnozhard/TipTime/assets/71705375/cb5c3694-d7d7-4438-9bf2-d51404853e55)
+
+ 5. Установите для layout_width и layout_height RadioGroupзначение wrap_content.
+
+ 6. Добавьте идентификатор ресурса, установленный в @+id/tip_options.
+
+ 7. Закройте начальный тег с помощью >.
+
+ 8. Android Studio добавляет </RadioGroup>. Как и ConstraintLayout, у RadioGroup элемента внутри будут другие элементы, поэтому вы можете захотеть переместить его в отдельную строку.
+
+![1111111111](https://github.com/gipnozhard/TipTime/assets/71705375/44b73de3-3c28-407d-b3da-2cc6066ffbb4)
+
+ 9. Ограничьте RadioGroup под служебным вопросом (по вертикали) и в начале родительского вопроса (по горизонтали).
+
+ 10. Установите для android:orientation атрибута значение vertical. Если вы хотите, чтобы RadioButtons располагались в ряд, вы бы установили ориентацию на horizontal.
+
+XML для RadioGroup должен выглядеть следующим образом:
+
+![image](https://github.com/gipnozhard/TipTime/assets/71705375/c8747415-e00f-4150-a488-853bc2351b77)
+
+### Добавление радиокнопок
+
+ 1. После последнего атрибута RadioGroup, но перед </RadioGroup> конечным тегом добавьте RadioButton.
+
+![image](https://github.com/gipnozhard/TipTime/assets/71705375/53a3b1de-21c3-470c-af77-cc3ce0689670)
+
+ 2. Установите для layout_width и layout_height значение wrap_content.
+
+ 3. Присвойте @+id/option_twenty_percentидентификатору RadioButton ресурса.
+ 
+ 4. Установите для текста значение Amazing (20%).
+
+ 5. Закройте тег с помощью />.
+
+![image](https://github.com/gipnozhard/TipTime/assets/71705375/71d2f213-aa06-4d22-8b2c-ad4e6f003562)
+
+![image](https://github.com/gipnozhard/TipTime/assets/71705375/917d8cd4-df1c-4cb2-9841-88121f8a7eb6)
+
+Теперь, когда вы добавили один из них RadioButton, можете ли вы изменить XML, чтобы добавить еще 2 переключателя для параметров Good (18%) и Okay (15%)?
+
+Вот как выглядит XML для RadioGroup и RadioButtons:
+
+![image](https://github.com/gipnozhard/TipTime/assets/71705375/4db068d7-72f7-4976-acb3-434ecb77da64)
+
+![image](https://github.com/gipnozhard/TipTime/assets/71705375/17c5d99d-93b3-4b5b-a6d1-275e8a332e89)
+
+### Добавьте выбор по умолчанию
+
+В настоящее время ни один из параметров подсказки не выбран. Было бы неплохо выбрать один из параметров переключателя по умолчанию.
+
+В RadioGroup есть атрибут, с помощью которого вы можете указать, какая кнопка должна быть отмечена изначально. Она называется checkedButton, и вы устанавливаете для нее идентификатор ресурса переключателя, который хотите выбрать.
+
+ 1. sНа RadioGroupустановите для android:checkedButton атрибута значение @id/option_twenty_percent.
+
+![image](https://github.com/gipnozhard/TipTime/assets/71705375/66121556-cafb-4c1a-b53c-15c17c1e07ba)
+
+Обратите внимание в редакторе дизайна, что макет был обновлен. Опция чаевых в размере 20% выбрана по умолчанию — круто! Теперь это начинает выглядеть как калькулятор чаевых!
+
+![image](https://github.com/gipnozhard/TipTime/assets/71705375/c8327b97-5af6-4185-ab05-2d2ea29790c2)
+
+Вот как выглядит XML на данный момент:
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/cost_of_service"
+        android:hint="Cost of Service"
+        android:layout_height="wrap_content"
+        android:layout_width="160dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:inputType="numberDecimal"/>
+
+    <TextView
+        android:id="@+id/service_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How was the service?"
+        app:layout_constraintTop_toBottomOf="@id/cost_of_service"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/tip_options"
+        android:checkedButton="@id/option_twenty_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/service_question"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/option_twenty_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amazing (20%)" />
+
+        <RadioButton
+            android:id="@+id/option_eighteen_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Good (18%)" />
+
+        <RadioButton
+            android:id="@+id/option_fifteen_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Okay (15%)" />
+    </RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 
 

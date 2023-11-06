@@ -1124,20 +1124,29 @@ MainActivity.kt
 
 Несмотря на то, что приложение сейчас функционирует, оно еще не готово к выпуску. Вам нужно провести дополнительное тестирование. И вам нужно добавить немного визуальной отделки и следовать рекомендациям Material Design. Вы также узнаете, как изменить тему приложения и значок приложения в следующих кодовых таблицах.
 
+## 7. Код решения
 
+Код решения для этой кодовой таблицы приведен ниже.
 
+![image](https://github.com/gipnozhard/TipTime/assets/71705375/3c94c049-af02-4f90-ae6a-564237513108)
 
+MainActivity.kt
 
+(обратите внимание на первую строку: замените название пакета, если ваше отличается от com.example.tiptime)
 
+![image](https://github.com/gipnozhard/TipTime/assets/71705375/792703fb-d23c-45c5-93b2-d586679a2a1d)
 
+Измените strings.xml
 
+![image](https://github.com/gipnozhard/TipTime/assets/71705375/a364468d-69b4-4d81-a3b1-bb4ab8351abd)
 
+Измените activity_main.xml
 
+![image](https://github.com/gipnozhard/TipTime/assets/71705375/f1bc4aaa-4550-4f9a-97d2-99234990ece7)
 
+Измените параметры модуля приложения build.gradle
 
-
-
-
+![image](https://github.com/gipnozhard/TipTime/assets/71705375/40122b7b-ad3b-4263-8b45-aa8975691881)
 
 
 
